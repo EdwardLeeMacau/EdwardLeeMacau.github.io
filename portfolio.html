@@ -4,8 +4,6 @@
 <head>
   <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Favicon-->
-  <link rel="shortcut icon" href="img/fav.png">
   <!-- Author Meta -->
   <meta name="author" content="colorlib">
   <!-- Meta Description -->
@@ -25,9 +23,8 @@
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/nice-select.css">
-  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/owl.carousel.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -37,14 +34,13 @@
     <div class="container main-menu">
       <div class="row align-items-center justify-content-between d-flex">
         <div id="logo">
-          <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+          <a href="./index.html">Home</a>
         </div>
         <nav id="nav-menu-container">
           <ul class="nav-menu">
-            <li><a href="./index.html">Home</a></li>
             <li><a href="./about-me.html">About Me</a></li>
+            <li><a href="./resume.html">Resume</a></li>
             <li><a href="./portfolio.html">Portfolio</a></li>
-            <li><a href="./services.html">Services</a></li>
             <li><a href="./contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -70,14 +66,10 @@
   <!-- End banner Area -->
 
   <!-- Start portfolio-area Area -->
-  <section class="portfolio-area section-gap" id="portfolio">
+  <section class="portfolio-area pb-120" id="portfolio">
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="menu-content pb-70 col-lg-8">
-          <div class="title text-center">
-            <h1 class="mb-10">My Projects</h1>
-            <p>Coding for better</p>
-          </div>
         </div>
       </div>
 
@@ -86,100 +78,143 @@
           <li class="active" data-filter="*">All</li>
           <li data-filter=".cpp">C++</li>
           <li data-filter=".python">Python</li>
-          <li data-filter=".machine-learning">ML</li>
-          <li data-filter=".computer-vision">CV</li>
+          <li data-filter=".machine-learning">Machine Learning</li>
+          <li data-filter=".computer-vision">Computer Vision</li>
           <li data-filter=".web-dev">Web Dev.</li>
         </ul>
       </div>
 
       <div class="filters-content">
+        <!-- FRAIG -->
         <div class="row grid">
-          <div class="single-portfolio col-sm-4 all cpp eda">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="img/project-FRAIG.jpg" alt="">
-              </div>
-              <a href="portfolio.html">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="img/preview.png" alt=""></div>
+          <div class="single-portfolio">
+            <div class="col-sm-4 all cpp eda">
+              <div class="relative">
+                <div class="thumb">
+                  <img class="image img-fluid" src="img/project-FRAIG.jpg" alt="">
                 </div>
-              </a>
+              </div>
             </div>
-            <div class="p-inner">
-              <h4>FRAIG</h4>
-              <div class="cat">EDA / C++</div>
+            <div class="col-sm-8 all cpp eda" style="position: relative; height: 100%;">
+              <div style="position: absolute; top: 50%; transform: translateY(-50%);">
+                <h4>FRAIG &middot; Functional Reduced And-Inverter Gate</h4>
+                <div class="cat">EDA &middot; C++</div>
+                <p></p>
+                <p>Implementation of AIGER (.aag) reader and optimizer.</p>
+                <p>Final Project of NTUEE-DSnP Fall 2019</p>
+                <p>>>> <a href="https://github.com/EdwardLeeMacau/NTUEE-DSnP-Fall2019-FRAIG">Repository</a></p>
+              </div>
             </div>
           </div>
-          <div class="single-portfolio col-sm-4 all python pytorch computer-vision machine-learning">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="img/project-YOLO.png" alt="">
-              </div>
-              <a href="portfolio.html">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="img/preview.png" alt=""></div>
-                </div>
-              </a>
-            </div>
-            <div class="p-inner">
-              <h4>YOLOv1: You Only Look Once</h4>
-              <div class="cat">Python</div>
-            </div>
-          </div>
-          <div class="single-portfolio col-sm-4 all ui web-dev">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="img/project-frontend.png" alt="">
-              </div>
-              <a href="portfolio.html">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="img/preview.png" alt=""></div>
-                </div>
-              </a>
+        </div>
 
+        <!-- YOLOv1 -->
+        <div class="row grid">
+          <div class="single-portfolio">
+            <div class="col-sm-4 all python pytorch computer-vision machine-learning">
+              <div class="relative">
+                <div class="thumb">
+                  <img class="image img-fluid" src="img/project-YOLO.png" alt="">
+                </div>
+              </div>
             </div>
-            <div class="p-inner">
-              <h4>Frontend Design</h4>
-              <div class="cat">Javascript</div>
+            <div class="col-sm-8 all python pytorch computer-vision machine-learning" style="position: relative; height: 100%;">
+              <div style="position: absolute; top: 50%; transform: translateY(-50%);">
+                <h4>YOLOv1 &middot; You Only Look Once: Real Time Object Detection</h4>
+                <div class="cat">ML &middot; CV &middot; Pytorch &middot; Python</div>
+                <p></p>
+                <p>Implementation of real time object detector using pytorch.</p>
+                <p>Homework of NTUEE-DLCV Spring 2019</p>
+                <p>>>> <a href="https://github.com/EdwardLeeMacau/NTU-Deep-Learning-for-Computer-Vision-Spring-2019-HW2">Repository</a></p>
+                <p>PS: Learned GAN &middot; Sequenctial detection Also</p>
+              </div>
             </div>
           </div>
-          <div class="single-portfolio col-sm-4 all embedded">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="img/project-ongoing.png" alt="">
-              </div>
-              <a href="portfolio.html">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="img/preview.png" alt=""></div>
-                </div>
-              </a>
+        </div>
 
+        <!-- Genetic Algorithm -->
+        <div class="row grid">
+          <div class="single-portfolio">
+            <div class="col-sm-4 all cpp">
+              <div class="relative">
+                <div class="thumb">
+                  <img class="image img-fluid" src="img/lattice-problem.png" alt="">
+                </div>
+              </div>
             </div>
-            <div class="p-inner">
-              <h4>Wearable Trojan Radar System</h4>
-              <div class="cat">Raspberry Pi</div>
+            <div class="col-sm-8 all cpp" style="position: relative; height: 100%;">
+              <div style="position: absolute; top: 50%; transform: translateY(-50%);">
+                <h4>Genetic Algorithm solving Shortest Vector Problem</h4>
+                <div class="cat">Cypography &middot; C++</div>
+                <p></p>
+                <p>Provided an optimization tool based on simple GA and example of using GA to solve SVP problem.</p>
+                <p>Homework of NTUEE-GA Fall 2019</p>
+                <p>>>> <a href="https://github.com/EdwardLeeMacau/ga">Repository</a></p>
+              </div>
             </div>
           </div>
-          <div class="single-portfolio col-sm-4 all web-dev vue django ongoing">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="img/project-ongoing.png" alt="">
-              </div>
-              <a href="portfolio.html">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="img/preview.png" alt=""></div>
-                </div>
-              </a>
+        </div>
 
+        <!-- Frontend Design -->
+        <div class="row grid">
+          <div class="single-portfolio">
+            <div class="col-sm-4 all ui web-dev">
+              <div class="relative">
+                <div class="thumb">
+                  <img class="image img-fluid" src="img/project-frontend.png" alt="">
+                </div>
+              </div>
             </div>
-            <div class="p-inner">
-              <h4>Team Cooperation Tools</h4>
-              <div class="cat">Vue.js / Django</div>
+            <div class="col-sm-8 all ui web-dev" style="position: relative; height: 100%;">
+              <div style="position: absolute; top: 50%; transform: translateY(-50%);">
+                <h4>FrontEnd Design</h4>
+                <div class="cat">JavaScript</div>
+                <p></p>
+                <p>My Homepage. Maintaining self-introduction and portfolio</p>
+                <p>>>> <a href="https://github.com/EdwardLeeMacau/EdwardLeeMacau.github.io">Repository</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded System -->
+        <div class="row grid">
+          <div class="single-portfolio">
+            <div class="col-sm-4 all python raspberry">
+              <div class="relative">
+                <div class="thumb">
+                  <img class="image img-fluid" src="img/project-ongoing.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8 all python raspberry" style="position: relative; height: 100%;">
+              <div style="position: absolute; top: 50%; transform: translateY(-50%);">
+                <h4>Wearable Trojan Radar System</h4>
+                <div class="cat">Raspberry Pi</div>
+                <p></p>
+                <p>>>> Available Soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Cooperate System -->
+        <div class="row grid">
+          <div class="single-portfolio">
+            <div class="col-sm-4 all web-dev">
+              <div class="relative">
+                <div class="thumb">
+                  <img class="image img-fluid" src="img/project-ongoing.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8 all web-dev" style="position: relative; height: 100%;">
+              <div style="position: absolute; top: 50%; transform: translateY(-50%);">
+                <h4>Team Cooperation Management</h4>
+                <div class="cat">Django</div> 
+                <p></p>
+                <p>>>> Available soon</p>
+              </div>
             </div>
           </div>
         </div>

@@ -1229,7 +1229,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .progress-table .serial {
-  width: 11.83%;
+  width: 20.00%;
   padding-left: 30px;
 }
 
@@ -1242,9 +1242,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .progress-table .percentage {
-  width: 40.36%;
+  width: 32.19%;
   padding-right: 50px;
 }
+
+.progress-table .category {
+  width: 25.00%;
+  padding-left: 30px;
+}
+
+.progress-table .name {
+  width: 25.00%;
+}
+
+.progress-table .usage {
+  width: 50.00%;
+  padding-right: 50px;
+}
+
 
 .progress-table .table-head {
   display: flex;
