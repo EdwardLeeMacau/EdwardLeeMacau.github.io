@@ -1,0 +1,741 @@
+#body{
+  background-color: black;
+  margin: 0px;
+}
+
+#worldBorder{
+  width: 1060px;
+  height: 1200px;
+  style: display: none;
+  display: inline-block;
+}
+
+#world{
+  display: inline-block;
+  style: display: none;
+}
+
+
+#pacman{
+  background-image: url("../images/pacman1.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  style: display: none;
+}
+
+.pacmanThumbsUp{
+  background-image: url("../images/pacmanThumbsUp.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  style: display: none;
+}
+
+.redGhost{
+  background-image: url("../images/redGhost.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  style: display: none;
+}
+
+.redGhostPic{
+  background-image: url("../images/redGhost.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -100px;
+}
+
+.orangeGhost{
+  background-image: url("../images/orangeGhost.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  style: display: none;
+}
+
+.orangeGhostPic{
+  background-image: url("../images/orangeGhost.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  margin-left: 400px;
+  margin-top: -100px;
+}
+
+.blueGhost{
+  background-image: url("../images/blueGhost.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  style: display: none;
+}
+
+.pinkGhost{
+  background-image: url("../images/pinkGhost.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  style: display: none;
+}
+
+
+#scoreBox{
+  color: white;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  style: display: none;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 500px;
+
+}
+
+#score{
+  margin-top: -50px;
+  border: 3px solid white;
+  width: 100px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  display: inline-block;
+  font-size: 40px;
+
+}
+
+
+.returnHomeButton {
+  width: 100px;
+  height: 25px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 2px solid gold;
+  font-size: 10px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  margin-top: 10px;
+  margin-bottom: -20px;
+}
+.returnHomeButton:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.returnHomeButton:hover {
+  background-color: #f3e07e;
+  color: black;
+  border-bottom: 4px solid #907a05;
+}
+.returnHomeButton:hover:before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
+}
+
+
+#timeTitle{
+  font-size: 25px;
+}
+
+#timer{
+  margin-top: -10px;
+  font-size: 30px;
+  margin-left: 55px;
+  width: 80px;
+  height: 35px;
+  border: 3px solid white;
+}
+
+#livesTitle{
+  padding-top: 20px;
+  font-size: 22px;
+}
+
+.life{
+  background-size: 100%;
+  background-image: url("../images/life.gif");
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+#life1{
+  margin-left: 10px;
+}
+
+#life2{
+
+}
+
+#life3{
+
+}
+
+#noLivesText{
+  font-style: italic;
+  margin-top: -10px;
+  font-size: 30px;
+}
+
+#scoreTitle{
+  font-size: 22px;
+}
+
+#keyTitle{
+  padding-top: 20px;
+  font-size: 22px;
+}
+
+
+#introScreen{
+font-family: 'VT323', monospace;
+  style: display: none;
+  color: white;
+  margin: 50px;
+  border: 5px solid white;
+  padding: 30px;
+  height: 550px;
+  width: 1060px;
+}
+
+#introScreen p{
+  margin-left: 300px;
+  margin-top: -40px;
+}
+
+#introScreen h5{
+  margin-left: 20px;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: -40px;
+}
+
+
+#youWinMessage{
+  font-family: 'VT323', monospace;
+  padding: 20px;
+  border: 3px solid white;
+  width: 530px;
+  color: white;
+  margin: 50px;
+  display: none;
+}
+
+#youWinMessage h1{
+  font-size: 60px;
+  display: inline-block;
+}
+
+#gameOverMessage{
+  font-family: 'VT323', monospace;
+  padding: 20px;
+  border: 3px solid white;
+  width: 500px;
+  color: white;
+  margin: 50px;
+  display: none;
+
+}
+
+#gameOverMessage h1{
+  font-size: 50px;
+}
+
+.playAgainButton{
+  height: 30px;
+  width: 90px;
+}
+
+.row div{
+  background-size: 100%;
+  /*border: 1px solid black;*/
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.brick{
+  background-color: blue;
+}
+
+.coin{
+  background-image: url("../images/coin.gif");
+  background-repeat: no-repeat;
+}
+
+.key{
+  background-size: 100%;
+  background-image: url("../images/key.gif");
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.keyPic{
+  background-size: 100%;
+  background-image: url("../images/key.gif");
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+  margin-bottom: -25px;
+}
+
+
+
+#key1{
+  margin-left: 10px;
+}
+
+#key2{
+
+
+}
+
+#key3{
+
+}
+
+#key4{
+  margin-left: 10px;
+
+}
+
+#key5{
+
+}
+
+#key6{
+
+}
+
+#key7{
+  margin-left: 10px;
+
+}
+
+#key8{
+
+}
+
+#key9{
+
+}
+
+.empty{
+}
+
+.welcome{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 40px;
+}
+
+.keysText{
+  color: gold;
+}
+
+.pacmanImg{
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  margin-left: -20px;
+  margin-top: -20px;
+
+}
+
+.buttonBox{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 100px;
+  margin-left: 30px;
+}
+
+
+.move1 {
+    margin-top: 15px;
+    margin-left: 40px;
+    width: 170px;
+    height: 25px;
+    transition: width 1s;
+    font: white;
+    vertical-align: center;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 2px solid #ff0a00;
+
+}
+
+.move1:hover {
+    width: 975px;
+}
+
+.move2 {
+    width: 125px;
+    height: 25px;
+    transition: width 1s;
+    font: whit5
+    vertical-align: center;
+    font-size: 20px;
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 2px solid #38d0c4;
+    background-position: left top;
+    position:relative;
+    right:0;
+    margin-right: 80px;
+    float:right;
+
+
+}
+
+.move2:hover {
+    width: 915px;
+}
+
+.move3 {
+    margin-top: 155px;
+    margin-left: 80px;
+    width: 145px;
+    height: 25px;
+    transition: width 1s;
+    font: white;
+    vertical-align: center;
+    font-size: 20px;
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 2px solid #ffa000;
+
+}
+
+.move3:hover {
+    width: 830px;
+}
+
+
+.move4 {
+  margin-top: 10px;
+
+    width: 135px;
+    height: 25px;
+    transition: width 1s;
+    font: white;
+    vertical-align: center;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 2px solid #fb4ea6;
+    background-position: left top;
+    position:relative;
+    right:0;
+    margin-right: 130px;
+    float:right;
+
+
+}
+
+.move4:hover {
+    width: 805px;
+}
+
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+.wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin-left: 550px;
+  margin-top: -90px;
+}
+
+.playAgainButton {
+  width: 250px;
+  height: 80px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 4px solid red;
+  font-size: 30px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+.playAgainButton:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.playAgainButton:hover {
+  background-color: #f55555;
+  color: #fff;
+  border-bottom: 4px solid #540606;
+}
+.playAgainButton:hover:before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
+}
+
+.playAgainButton1 {
+  width: 250px;
+  height: 80px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 4px solid gold;
+  font-size: 30px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  margin-top: 10px;
+}
+.playAgainButton1:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.playAgainButton1:hover {
+  background-color: #f3e07e;
+  color: black;
+  border-bottom: 4px solid #907a05;
+}
+.playAgainButton1:hover:before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
+}
+
+
+.button {
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 4px solid blue;
+  font-size: 40px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+.button:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.button:hover {
+  background-color: #2194E0;
+  color: #fff;
+  border-bottom: 4px solid #1977b5;
+}
+.button:hover:before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
+}
+
+.dash1{
+  display: inline-block;
+  font-size: 10px;
+  margin-left: 870px;
+  vertical-align: top;
+}
+
+.dash2{
+  display: inline-block;
+  font-size: 10px;
+  margin-left: 870px;
+  margin-top: -6px;
+  vertical-align: top;
+}
+
+
+.shortCutWinScreenButton {
+  width: 145px;
+  height: 30px;
+  margin-right: 30px;
+  float: right;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 2px solid gold;
+  font-size: 10px;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  vertical-align: top;
+
+}
+.shortCutWinScreenButton:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.shortCutWinScreenButton:hover {
+  background-color: #f3e07e;
+  color: black;
+  border-bottom: 4px solid #907a05;
+}
+.shortCutWinScreenButton:hover:before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
+}
+
+
+.shortCutGameOverScreenButton {
+  width: 162px;
+  height: 30px;
+  margin-right: 14px;
+  float: right;
+  margin-top: -15px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 2px solid red;
+  font-size: 10px;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  vertical-align: top;
+}
+.shortCutGameOverScreenButton:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.shortCutGameOverScreenButton:hover {
+  background-color: #f55555;
+  color: #fff;
+  border-bottom: 4px solid #540606;
+}
+.shortCutGameOverScreenButton:hover:before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.arrow {
+  margin-top: 10px;
+  margin-left: 52px;
+  width: 12px;
+  height: 12px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+  background-size: contain;
+  display: inline-block;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}

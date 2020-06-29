@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./styles/main.css">
+  <link async href="http://fonts.googleapis.com/css?family=Baumans" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+  <title>Pacman game</title>
+
+</head>
+
+<body id="body">
+
+  <div id="worldBorder" style="display:none">
+
+    <div id='world' style="display:none"></div>
+    <div id='pacman' style="display:none; transform:none;"></div>
+    <div id='redGhost' class='redGhost' style="display:none"></div>
+    <div id='redGhost1' class='redGhost' style="display:none"></div>
+    <div id='redGhost2' class='redGhost' style="display:none"></div>
+    <div id='redGhost3' class='redGhost' style="display:none"></div>
+    <div id='redGhost4' class='redGhost' style="display:none"></div>
+    <div id='redGhost5' class='redGhost' style="display:none"></div>
+    <div id='redGhost6' class='redGhost' style="display:none"></div>
+    <div id='orangeGhost' class='orangeGhost' style="display:none"></div>
+    <div id='orangeGhost1' class='orangeGhost' style="display:none"></div>
+    <div id='orangeGhost2' class='orangeGhost' style="display:none"></div>
+    <div id='orangeGhost3' class='orangeGhost' style="display:none"></div>
+    <div id='orangeGhost4' class='orangeGhost' style="display:none"></div>
+    <div id='orangeGhost5' class='orangeGhost' style="display:none"></div>
+    <div id='blueGhost' class='blueGhost' style="display:none"></div>
+    <div id='blueGhost1' class='blueGhost' style="display:none"></div>
+    <div id='blueGhost2' class='blueGhost' style="display:none"></div>
+    <div id='blueGhost3' class='blueGhost' style="display:none"></div>
+    <div id='blueGhost4' class='blueGhost' style="display:none"></div>
+    <div id='pinkGhost' class='pinkGhost' style="display:none"></div>
+    <div id='pinkGhost1' class='pinkGhost' style="display:none"></div>
+    <div id='pinkGhost2' class='pinkGhost' style="display:none"></div>
+    <div id='pinkGhost3' class='pinkGhost' style="display:none"></div>
+    <div id='pinkGhost4' class='pinkGhost' style="display:none"></div>
+
+
+  </div>
+
+  <div id="scoreBox" style="display:none">
+
+    <button type="button" class="returnHomeButton" onClick="refreshPage()">RETURN HOME</button>
+
+    <p id="timeTitle">TIME:</p>
+
+    <p id="timer"></p>
+
+    <p id="livesTitle">LIVES LEFT:</p>
+    <div id="life1" style="display:inline-block"><img class="life" src="images/life.gif" alt="life"></div>
+    <div id="life2" style="display:inline-block"><img class="life" src="images/life.gif" alt="life"></div>
+    <div id="life3" style="display:inline-block"><img class="life" src="images/life.gif" alt="life"></div>
+    <h2 id="noLivesText" style="display:none">None!</h2>
+
+    <br>
+    <br>
+    <p id="scoreTitle">SCORE:</p>
+    <br>
+    <br>
+    <div id="score">0</div>
+
+    <p id="keyTitle">KEYS:</p>
+    <div id="key1" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+    <div id="key2" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+    <div id="key3" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+    <div id="key4" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+    <div id="key5" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+    <div id="key6" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+    <div id="key7" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+    <div id="key8" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+    <div id="key9" style="display:none"><img class="key" src="images/key.gif" alt="key"></div>
+
+
+  </div>
+
+  <div id="introScreen" style="display:block">
+
+    <img class="pacmanImg" src="images/pacmanImg.png" alt="">
+    <h1 class="welcome">Welcome to Pacman: Quest for the <a class="keysText">Keys</a>!</h1>
+    <p>
+      < Best displayed on CHROME browser, in FULL SCREEN>
+    </p>
+
+    <h3 class="dash1">></h3> <button type="button" class="shortCutWinScreenButton" onClick="showWinScreen()">VIEW the YOU WIN! screen</button>
+    <br>
+    <br>
+    <h3 class="dash2">></h3> <button type="button" class="shortCutGameOverScreenButton" onClick="showGameOverScreen()">VIEW the GAME OVER! screen</button>
+
+
+    <h5>Hover to display info!</h5>
+    <div class="arrow bounce"></div>
+    <div class="arrow bounce"></div>
+    <div class="arrow bounce"></div>
+
+
+    <div class="move1">INSTRUCTIONS <i class="fa fa-angle-double-right" style="font-size:23px;vertical-align:top"></i> Navigate pacman around the maze to collect items and avoid ghosts! </div>
+    <div class="move2"><i class="fa fa-angle-double-left" style="font-size:23px;vertical-align:top"></i> CONTROLS : Use the Up, Down, Left, and Right arrow keys to control pacman!</div>
+    <div class="move3">HOW TO WIN <i class="fa fa-angle-double-right" style="font-size:23px;vertical-align:top"></i> Collect all 9 keys before time runs out to win the game!</div>
+    <div class="move4"><i class="fa fa-angle-double-left" style="font-size:23px;vertical-align:top"></i> HIGHSCORE : Collect as many coins as possible to get a highscore!</div>
+
+    <div class="coin"></div>
+    <div class="wrapper">
+      <a href="#" class="button" onclick="worldFunction()">CLICK HERE TO PLAY!</a>
+    </div>
+    <div class="coin"></div>
+  </div>
+
+  <div id="youWinMessage">
+
+    <h1>YOU WIN!</h1>
+    <div class='keyPic' style="display:inline-block"></div>
+    <div class='pacmanThumbsUp' style="display:inline-block"></div>
+    <h2>Wow you actually won?! Way to go!!!</h2>
+    <h2 id="scoreNum"></h2>
+    <h2>HIGHSCORE: 3000pts</h2>
+    <button type="button" class="playAgainButton1" onClick="refreshPage()">RETURN HOME</button>
+
+  </div>
+
+  <div id="gameOverMessage">
+
+    <h1>GAME OVER!</h1>
+    <h2 id="ghostsOrTimeMessage"></h2>
+    <div class='redGhostPic' style="display:inline-block"></div>
+    <div class='orangeGhostPic' style="display:inline-block"></div>
+    <h2 id="scoreNum2"></h2>
+    <h2>HIGHSCORE: 3000pts</h2>
+    <button type="button" class="playAgainButton" onClick="refreshPage()">RETURN HOME</button>
+    <!-- <button type="button" class="playAgainButton" onClick="worldFunction()">Play Again?</button> -->
+
+
+
+  </div>
+
+</body>
+
+</html>
