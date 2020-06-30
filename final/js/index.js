@@ -205,17 +205,6 @@ function randomAgent(agent, agentDisplay) {
 // ------------------------------------------------------
 
 function displayWorld() {
-    var worldBorderShow = $("#worldBorder");
-    var worldShow = $("#world");
-    var pacmanShow = $("#pacman");
-
-    var redGhostShow = $("#redGhost");
-    var orangeGhostShow = $("orangeGhost");
-    var blueGhostShow = $("blueGhost");
-    var pinkGhostShow = $("pinkGhost");
-
-    var scoreBoxShow = $("#scoreBox");
-    var youWinMessage = $("#youWinMessage")
 
     var output = "";
     var numOfCoins = 0;
@@ -247,51 +236,28 @@ function displayWorld() {
             y: 21
         };
 
-        if (worldShow.style.display === "none") {
-            worldShow.style.display = "block";
-        } else {
-            worldShow.style.display = "none";
-        }
-        if (worldBorderShow.style.display === "none") {
-            worldBorderShow.style.display = "inline-block";
-        } else {
-            worldBorderShow.style.display = "none";
-        }
-        if (pacmanShow.style.display === "none") {
-            pacmanShow.style.display = "block";
-        } else {
-            pacmanShow.style.display = "none";
-        }
-        if (redGhostShow.style.display === "none") {
-            redGhostShow.style.display = "block";
-        } else {
-            redGhostShow.style.display = "none";
-        }
-        if (orangeGhostShow.style.display === "none") {
-            orangeGhostShow.style.display = "block";
-        } else {
-            orangeGhostShow.style.display = "none";
-        }
-        if (blueGhostShow.style.display === "none") {
-            blueGhostShow.style.display = "block";
-        } else {
-            blueGhostShow.style.display = "none";
-        }
-        if (pinkGhostShow.style.display === "none") {
-            pinkGhostShow.style.display = "block";
-        } else {
-            pinkGhostShow.style.display = "none";
-        }
-        if (scoreBoxShow.style.display === "none") {
-            scoreBoxShow.style.display = "inline-block";
-        } else {
-            scoreBoxShow.style.display = "none";
-        }
-        if (youWinMessage.style.display === "none") {
-            youWinMessage.style.display = "block";
-        } else {
-            youWinMessage.style.display = "none";
-        }
+        // $("#introScreen").css('display', 
+        //     ($("#introScreen").css('display') === "none") ? "block" : "none");
+        $("#worldBorder").css('display', 
+            ($("#worldBorder").css('display') === "none") ? "inline-block" : "none");
+        $("#pacman").css('display', 
+            ($("#pacman").css('display') === "none") ? "block" : "none");
+        $("#world").css('display', 
+            ($("#world").css('display') === "none") ? "block" : "none");
+        $("#redGhost").css('display', 
+            ($("#redGhost").css('display') === "none") ? "block" : "none");
+        $("#orangeGhost").css('display', 
+            ($("#orangeGhost").css('display') === "none") ? "block" : "none");
+        $("#blueGhost").css('display', 
+            ($("#blueGhost").css('display') === "none") ? "block" : "none");
+        $("#pinkGhost").css('display', 
+            ($("#pinkGhost").css('display') === "none") ? "block" : "none");
+        $("#scoreBox").css('display', 
+            ($("#scoreBox").css('display') === "none") ? "inline-block" : "none");
+        $("#youWinMessage").css('display', 
+            ($("#youWinMessage").css('display') === "none") ? "block" : "none");
+        // $("#gameOverMessage").css('display', 
+        //     ($("#gameOverMessage").css('display') === "none") ? "block" : "none");
     }
 
     $("#world").html(output);
@@ -332,19 +298,28 @@ function worldFunction() {
 
     reset();
 
-    var pacmanShow = $("#pacman");
-
-    $("#introScreen").css('display', ($("#introScreen").css('display') === "none") ? "block" : "none");
-    $("#worldBorder").css('display', ($("#worldBorder").css('display') === "none") ? "inline-block" : "none");
-    $("#pacman").css('display', ($("#pacman").css('display') === "none") ? "block" : "none");
-    $("#world").css('display', ($("#world").css('display') === "none") ? "block" : "none");
-    $("#redGhost").css('display', ($("#redGhost").css('display') === "none") ? "block" : "none");
-    $("#orangeGhost").css('display', ($("#orangeGhost").css('display') === "none") ? "block" : "none");
-    $("#blueGhost").css('display', ($("#blueGhost").css('display') === "none") ? "block" : "none");
-    $("#pinkGhost").css('display', ($("#pinkGhost").css('display') === "none") ? "block" : "none");
-    $("#scoreBox").css('display', ($("#scoreBox").css('display') === "none") ? "block" : "none");
-    $("#youWinMessage").css('display', ($("#youWinMessage").css('display') === "none") ? "block" : "none");
-    $("#gameOverMessage").css('display', ($("#gameOverMessage").css('display') === "none") ? "block" : "none");
+    $("#introScreen").css('display', 
+        ($("#introScreen").css('display') === "none") ? "block" : "none");
+    $("#worldBorder").css('display', 
+        ($("#worldBorder").css('display') === "none") ? "inline-block" : "none");
+    $("#pacman").css('display', 
+        ($("#pacman").css('display') === "none") ? "block" : "none");
+    $("#world").css('display', 
+        ($("#world").css('display') === "none") ? "block" : "none");
+    $("#redGhost").css('display', 
+        ($("#redGhost").css('display') === "none") ? "block" : "none");
+    $("#orangeGhost").css('display', 
+        ($("#orangeGhost").css('display') === "none") ? "block" : "none");
+    $("#blueGhost").css('display', 
+        ($("#blueGhost").css('display') === "none") ? "block" : "none");
+    $("#pinkGhost").css('display', 
+        ($("#pinkGhost").css('display') === "none") ? "block" : "none");
+    $("#scoreBox").css('display', 
+        ($("#scoreBox").css('display') === "none") ? "inline-block" : "none");
+    // $("#youWinMessage").css('display', 
+    //     ($("#youWinMessage").css('display') === "none") ? "block" : "none");
+    // $("#gameOverMessage").css('display', 
+    //     ($("#gameOverMessage").css('display') === "none") ? "block" : "none");
 
 
     // ------------------------------------------------------
@@ -353,7 +328,7 @@ function worldFunction() {
 
     window.setInterval(function() {
         randomAgent(redGhost, displayRedGhost);
-    }, 200);
+    }, 300);
 
     window.setInterval(function() {
         randomAgent(orangeGhost, displayOrangeGhost);
@@ -361,11 +336,11 @@ function worldFunction() {
 
     window.setInterval(function() {
         randomAgent(blueGhost, displayBlueGhost);
-    }, 100);
+    }, 500);
 
     window.setInterval(function() {
         randomAgent(pinkGhost, displayPinkGhost);
-    }, 150);
+    }, 300);
 
     displayWorld();
     displayPacman();
@@ -453,55 +428,27 @@ function gameOver() {
             y: 21
         };
 
-        if (worldShow.style.display === "none") {
-            worldShow.style.display = "block";
-        } else {
-            worldShow.style.display = "none";
-        }
-        if (worldBorderShow.style.display === "none") {
-            worldBorderShow.style.display = "inline-block";
-        } else {
-            worldBorderShow.style.display = "none";
-        }
-        if (pacmanShow.style.display === "none") {
-            pacmanShow.style.display = "block";
-        } else {
-            pacmanShow.style.display = "none";
-        }
-        if (redGhostShow.style.display === "none") {
-            redGhostShow.style.display = "block";
-        } else {
-            redGhostShow.style.display = "none";
-        }
+        $("#world").css('display', 
+            ($("#world").css('display') === "none") ? "block" : "none");
+        $("#worldBorder").css('display', 
+            ($("#worldBorder").css('display') === "none") ? "inline-block" : "none");
+        $("#pacman").css('display', 
+            ($("#pacman").css('display') === "none") ? "block" : "none");
+        // $("#introScreen").css('display', 
+        //     ($("#introScreen").css('display') === "none") ? "block" : "none");
+        $("#redGhost").css('display', 
+            ($("#redGhost").css('display') === "none") ? "block" : "none");
+        $("#orangeGhost").css('display', 
+            ($("#orangeGhost").css('display') === "none") ? "block" : "none");
+        $("#blueGhost").css('display', 
+            ($("#blueGhost").css('display') === "none") ? "block" : "none");
+        $("#pinkGhost").css('display', 
+            ($("#pinkGhost").css('display') === "none") ? "block" : "none");
+        $("#scoreBox").css('display', 
+            ($("#scoreBox").css('display') === "none") ? "inline-block" : "none");
+        $("#gameOverMessage").css('display', 
+            ($("#gameOverMessage").css('display') === "none") ? "block" : "none");
 
-        if (orangeGhostShow.style.display === "none") {
-            orangeGhostShow.style.display = "block";
-        } else {
-            orangeGhostShow.style.display = "none";
-        }
-
-        if (blueGhostShow.style.display === "none") {
-            blueGhostShow.style.display = "block";
-        } else {
-            blueGhostShow.style.display = "none";
-        }
-
-        if (pinkGhostShow.style.display === "none") {
-            pinkGhostShow.style.display = "block";
-        } else {
-            pinkGhostShow.style.display = "none";
-        }
-
-        if (scoreBoxShow.style.display === "none") {
-            scoreBoxShow.style.display = "inline-block";
-        } else {
-            scoreBoxShow.style.display = "none";
-        }
-        if (gameOverMessage.style.display === "none") {
-            gameOverMessage.style.display = "block";
-        } else {
-            gameOverMessage.style.display = "none";
-        }
     } else {
         pacmanLives -= 1;
         pacman = {
