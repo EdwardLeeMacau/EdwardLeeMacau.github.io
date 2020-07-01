@@ -5,7 +5,6 @@
 var world = [
     // original code
 
-
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
     [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
     [2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2],
@@ -19,7 +18,7 @@ var world = [
     [0, 0, 0, 0, 0, 2, 1, 2, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 2, 1, 2, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 2, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1, 2, 0, 0, 0, 0, 0],
     [2, 2, 2, 2, 2, 2, 1, 2, 2, 0, 2, 2, 2, 0, 0, 2, 2, 2, 0, 2, 2, 1, 2, 2, 2, 2, 2, 2],
-    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
     [2, 2, 2, 2, 2, 2, 1, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 1, 2, 2, 2, 2, 2, 2],
     [0, 0, 0, 0, 0, 2, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1, 2, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 2, 1, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 1, 2, 0, 0, 0, 0, 0],
@@ -99,6 +98,10 @@ function reset() {
     pacmanLives = 3;
     keysFound = 0;
     score = 236;
+}
+
+function getLoc(loc) {
+    return world[loc.y][loc.x];
 }
 
 function left(character) {
@@ -228,6 +231,7 @@ function displayWorld() {
         output += "\n</div>";
     }
 
+    // WIN LOGIC
     if (score == 0) {
         $("#scoreNum").html("Your final score was " + 236 - score + " points!");
 
@@ -236,38 +240,28 @@ function displayWorld() {
             y: 21
         };
 
-        // $("#introScreen").css('display', 
-        //     ($("#introScreen").css('display') === "none") ? "block" : "none");
-        $("#worldBorder").css('display', 
-            ($("#worldBorder").css('display') === "none") ? "inline-block" : "none");
-        $("#pacman").css('display', 
-            ($("#pacman").css('display') === "none") ? "block" : "none");
-        $("#world").css('display', 
-            ($("#world").css('display') === "none") ? "block" : "none");
-        $("#redGhost").css('display', 
-            ($("#redGhost").css('display') === "none") ? "block" : "none");
-        $("#orangeGhost").css('display', 
-            ($("#orangeGhost").css('display') === "none") ? "block" : "none");
-        $("#blueGhost").css('display', 
-            ($("#blueGhost").css('display') === "none") ? "block" : "none");
-        $("#pinkGhost").css('display', 
-            ($("#pinkGhost").css('display') === "none") ? "block" : "none");
-        $("#scoreBox").css('display', 
-            ($("#scoreBox").css('display') === "none") ? "inline-block" : "none");
-        $("#youWinMessage").css('display', 
-            ($("#youWinMessage").css('display') === "none") ? "block" : "none");
-        // $("#gameOverMessage").css('display', 
-        //     ($("#gameOverMessage").css('display') === "none") ? "block" : "none");
+        $("#worldBorder").css('display', 'none');
+        $("#pacman").css('display', 'none');
+        $("#world").css('display', 'none');
+        $("#redGhost").css('display', 'none');
+        $("#orangeGhost").css('display', 'none');
+        $("#blueGhost").css('display', 'none');
+        $("#pinkGhost").css('display', 'none');
+        $("#scoreBox").css('display', 'none');
+        $("#youWinMessage").css('display', 'block');
     }
 
     $("#world").html(output);
+}
+
+function updateLoc(loc) {
+
 }
 
 function displayPacman() {
     $("#pacman").css('top', pacman.y * 24 + "px");
     $("#pacman").css('left', pacman.x * 24 + "px");
 }
-
 
 function displayRedGhost() {
     $("#redGhost").css('top', redGhost.y * 24 + "px");
@@ -293,34 +287,24 @@ function displayScore() {
     $("#score").html(score);
 }
 
+// ------------------------------------------------------
+//  MAIN FUNCTION
+// ------------------------------------------------------
+
 // Game Init function
 function worldFunction() {
 
     reset();
 
-    $("#introScreen").css('display', 
-        ($("#introScreen").css('display') === "none") ? "block" : "none");
-    $("#worldBorder").css('display', 
-        ($("#worldBorder").css('display') === "none") ? "inline-block" : "none");
-    $("#pacman").css('display', 
-        ($("#pacman").css('display') === "none") ? "block" : "none");
-    $("#world").css('display', 
-        ($("#world").css('display') === "none") ? "block" : "none");
-    $("#redGhost").css('display', 
-        ($("#redGhost").css('display') === "none") ? "block" : "none");
-    $("#orangeGhost").css('display', 
-        ($("#orangeGhost").css('display') === "none") ? "block" : "none");
-    $("#blueGhost").css('display', 
-        ($("#blueGhost").css('display') === "none") ? "block" : "none");
-    $("#pinkGhost").css('display', 
-        ($("#pinkGhost").css('display') === "none") ? "block" : "none");
-    $("#scoreBox").css('display', 
-        ($("#scoreBox").css('display') === "none") ? "inline-block" : "none");
-    // $("#youWinMessage").css('display', 
-    //     ($("#youWinMessage").css('display') === "none") ? "block" : "none");
-    // $("#gameOverMessage").css('display', 
-    //     ($("#gameOverMessage").css('display') === "none") ? "block" : "none");
-
+    $("#introScreen").css('display', 'none');
+    $("#worldBorder").css('display', 'inline-block');
+    $("#pacman").css('display', 'block');
+    $("#world").css('display', 'block');
+    $("#redGhost").css('display', 'block');
+    $("#orangeGhost").css('display', 'block');
+    $("#blueGhost").css('display', 'block');
+    $("#pinkGhost").css('display', 'block');
+    $("#scoreBox").css('display', 'inline-block');
 
     // ------------------------------------------------------
     //  AGENTS FUNCTION
@@ -359,22 +343,36 @@ function worldFunction() {
     }, false);
 
     document.onkeydown = function(movePacman) {
-        if (movePacman.keyCode == 39 && world[pacman.y][pacman.x + 1] != 2) {
-            // RIGHT
-            $("#pacman").css('transform', 'none');
-            pacman.x = right(pacman).x;
-            // LEFT
-        } else if (movePacman.keyCode == 37 && world[pacman.y][pacman.x - 1] != 2) {
-            $("#pacman").css('transform', 'rotate(180deg)');
-            pacman.x = left(pacman).x;
-            // UP
-        } else if (movePacman.keyCode == 38 && world[pacman.y - 1][pacman.x] != 2) {
-            $("#pacman").css('transform', 'rotate(270deg)');
-            pacman.y = up(pacman).y;
-            // DOWN
-        } else if (movePacman.keyCode == 40 && world[pacman.y + 1][pacman.x] != 2) {
-            $("#pacman").css('transform', 'rotate(90deg)');
-            pacman.y = down(pacman).y;
+        let newLoc = null;
+
+        if (movePacman.keyCode == 39) {
+            newLoc = right(pacman);
+
+            if (getLoc(newLoc) != 2) {
+                $("#pacman").css('transform', 'none');
+                pacman.x = newLoc.x;
+            }
+        } else if (movePacman.keyCode == 37) {
+            newLoc = left(pacman);
+
+            if (getLoc(newLoc) != 2) {
+                $("#pacman").css('transform', 'rotate(180deg)');
+                pacman.x = left(pacman).x;
+            }
+        } else if (movePacman.keyCode == 38) {
+            newLoc = up(pacman);
+
+            if (getLoc(newLoc) != 2) {
+                $("#pacman").css('transform', 'rotate(270deg)');
+                pacman.y = up(pacman).y;
+            }
+        } else if (movePacman.keyCode == 40) {
+            newLoc = down(pacman);
+
+            if (getLoc(newLoc) != 2) {
+                $("#pacman").css('transform', 'rotate(90deg)');
+                pacman.y = down(pacman).y;
+            }
         }
 
         if (world[pacman.y][pacman.x] == 1) {
@@ -383,37 +381,33 @@ function worldFunction() {
             displayScore();
             displayWorld();
         }
-        if (world[pacman.y][pacman.x] == 3) {
-            world[pacman.y][pacman.x] = 0;
-            displayScore();
-            displayWorld();
-        }
-        displayPacman();
+        // displayPacman();
 
-        if (redGhost.x == pacman.x && redGhost.y == pacman.y) {
+        if (collision(redGhost, pacman)) {
             pacmanGotHit = true;
             gameOver();
         }
-        displayPacman();
+        // displayPacman();
 
-        if (orangeGhost.x == pacman.x && orangeGhost.y == pacman.y) {
+        if (collision(orangeGhost, pacman)) {
             pacmanGotHit = true;
             gameOver();
         }
-        displayPacman();
+        // displayPacman();
 
-        if (blueGhost.x == pacman.x && blueGhost.y == pacman.y) {
+        if (collision(blueGhost, pacman)) {
             pacmanGotHit = true;
             gameOver();
         }
-        displayPacman();
+        // displayPacman();
 
-        if (pinkGhost.x == pacman.x && pinkGhost.y == pacman.y) {
+        if (collision(pinkGhost, pacman)) {
             pacmanGotHit = true;
             gameOver();
         }
-        displayPacman();
+        // displayPacman();
 
+        displayPacman();
     }
 
 }
@@ -428,26 +422,15 @@ function gameOver() {
             y: 21
         };
 
-        $("#world").css('display', 
-            ($("#world").css('display') === "none") ? "block" : "none");
-        $("#worldBorder").css('display', 
-            ($("#worldBorder").css('display') === "none") ? "inline-block" : "none");
-        $("#pacman").css('display', 
-            ($("#pacman").css('display') === "none") ? "block" : "none");
-        // $("#introScreen").css('display', 
-        //     ($("#introScreen").css('display') === "none") ? "block" : "none");
-        $("#redGhost").css('display', 
-            ($("#redGhost").css('display') === "none") ? "block" : "none");
-        $("#orangeGhost").css('display', 
-            ($("#orangeGhost").css('display') === "none") ? "block" : "none");
-        $("#blueGhost").css('display', 
-            ($("#blueGhost").css('display') === "none") ? "block" : "none");
-        $("#pinkGhost").css('display', 
-            ($("#pinkGhost").css('display') === "none") ? "block" : "none");
-        $("#scoreBox").css('display', 
-            ($("#scoreBox").css('display') === "none") ? "inline-block" : "none");
-        $("#gameOverMessage").css('display', 
-            ($("#gameOverMessage").css('display') === "none") ? "block" : "none");
+        $("#world").css('display', 'none');
+        $("#worldBorder").css('display', 'none');
+        $("#pacman").css('display', 'none');
+        $("#redGhost").css('display', 'none');
+        $("#orangeGhost").css('display', 'none');
+        $("#blueGhost").css('display', 'none');
+        $("#pinkGhost").css('display', 'none');
+        $("#scoreBox").css('display', 'none');
+        $("#gameOverMessage").css('display', "block");
 
     } else {
         pacmanLives -= 1;
@@ -464,30 +447,6 @@ function gameOver() {
 function refreshPage() {
     pacmanGotHit = false;
     window.location.reload();
-}
-
-function showWinScreen() {
-    $("#gameOverMessage").css('display', 'none');
-    $("#youWinMessage").css('display', 'block');
-    $("#introScreen").css('display', 'none');
-    $("#worldBorder").css('display', 'none');
-    $("#scoreBox").css('display', 'none');
-
-    $("#scoreNum").html("Your final score was 0 points!");
-}
-
-function showGameOverScreen() {
-    $("#scoreBox").css('display', 'none');
-    $("#introScreen").css('display', 'none');
-    $("#worldBorder").css('display', 'none');
-    $("#youWinMessage").css('display', 'none');
-    $("#gameOverMessage").css('display', 'block');
-
-    var scoreBoxShow = document.getElementById("scoreBox");
-
-    document.getElementById("scoreNum").innerHTML = "Your final score was 0 points!";
-    document.getElementById("ghostsOrTimeMessage").innerHTML = "The ghosts got you!";
-    document.getElementById("scoreNum2").innerHTML = "Your final score was 0 points!";
 }
 
 function playAgain() {
